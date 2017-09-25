@@ -38,7 +38,9 @@ module.exports = {
     },
     toJSON: function() {
       var obj = this.toObject();
-      obj.start_date = obj.start_date.slice(0,-14);
+      if(obj.start_date) {
+        obj.start_date = obj.start_date.slice(0,-14);
+      }    
       return obj;
     }
   },
